@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="dist/reset.css">
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/black.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Folie 1 --> 
+                <section>
+                    <h1>Mergesort mit Min-Heap</h1>
+                    <h2>Beispiel</h2>
+                </section>
+
+                <!-- Folie 2 -->
+                <section>
+                    <h3>Gegebenes Array</h3>
+                    <pre><code>[1, 7, 8, 2, 3, 5, 4, 6]</code></pre>
+
+                    <h3>Blockgröße von 3</h3>
+                    <pre><code>
+			  Block 1: [1, 7, 8]
+			  Block 2: [2, 3, 5]
+			  Block 3: [4, 6]
+					</code></pre>
+                </section>
+
+                <!-- Folie 3 -->
+                <section>
+                    <h3>Sortieren der Blöcke</h3>
+                    <pre><code>
+			  Block 1: [1, 7, 8]
+			  Block 2: [2, 3, 5]
+			  Block 3: [4, 6]
+					</code></pre>
+                </section>
+
+                <!-- Folie 4 -->
+                <section>
+                    <h3>Merging der sortierten Blöcke</h3>
+                    <pre><code>
+			  Min-Heap: [1, 2, 4]
+			  
+			  [1]
+			  
+			  Min-Heap: [2, 7, 4]
+			  
+			  [1, 2]
+			  
+			  Min-Heap: [4, 7, 5]
+			  
+			  [1, 2, 4]
+			  
+			  Min-Heap: [5, 7, 8]
+			  
+			  [1, 2, 4, 5]
+			  
+			  Min-Heap: [6, 7, 8]
+			  
+			  [1, 2, 4, 5, 6]
+			  
+			  Min-Heap: [7, 8]
+			  
+			  [1, 2, 4, 5, 6, 7]
+			  
+			  Min-Heap: [8]
+			  
+			  [1, 2, 4, 5, 6, 7, 8]
+					</code></pre>
+                </section>
+
+                <!-- Folie 5 -->
+                <section>
+                    <h3>Ausgabearray</h3>
+                    <pre><code>[1, 2, 4, 5, 6, 7, 8]</code></pre>
+
+                    <h3>Fertig</h3>
+                </section>
+
+				<section>
+					<h3>Komplexität</h3>
+					<p>
+					  Im Beispiel mit dem Array [1, 7, 8, 2, 3, 5, 4, 6] ist die Blockgröße 3. <br><br> Die Zeitkomplexität beträgt daher <br>O(n log 3) = O(n log 3).
+					</p>
+				  
+				 
+				  </section>
+				  
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+            });
+        </script>
+    </body>
+</html>
